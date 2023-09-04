@@ -1,0 +1,32 @@
+﻿@model Vidly.ViewModels.MoviesCustomersViewModel
+@{
+	ViewBag.Title = "Customers";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2>Customers</h2>
+
+@if (Model.Customers.Count == 0)
+{
+	<p>No customers have been registered yet</p>
+}
+else
+{
+	<table class="table	table-bordered	table-hover">
+		<tr>
+			<td>
+				<b>Customer Name</b>
+			</td>
+		</tr>
+
+		@for (int i = 0; i < Model.Customers.Count; i++)
+		{
+			<tr>
+				<td>
+					@Html.ActionLink(Model.Customers[i].Name, "Details", "Customers", new { Id = i + 1})
+				</td>
+			</tr>
+		}
+	</table>
+}
