@@ -1,0 +1,19 @@
+﻿@model VidlyF.ViewModels.MoviesCustomersViewModel
+@{
+	ViewBag.Title = "Random";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+	var className = Model.Customers.Count > 2 ? "populer" : null;
+}
+
+
+<h2 class="@className">@Model.Movie.Name</h2>
+
+<ul>
+	@foreach (Customer customer in Model.Customers)
+	{
+		<li>@customer.Name</li>
+	}
+</ul>
