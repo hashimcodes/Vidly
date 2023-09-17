@@ -6,7 +6,7 @@ namespace VidlyF.Models
 	{
 		public int Id { get; set; }
 		public string Name { get; set; }
-		public MembershipType MembershipType { get; set; }
+		public MembershipType? MembershipType { get; set; }
 
 		[Display(Name = "Membership Type")]
 		public byte MembershipTypeId { get; set; }
